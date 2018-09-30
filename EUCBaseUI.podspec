@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.author       = { "TYH" => "562080971@qq.com" }
 
   s.platform     = :ios, "8.0"
-  s.source       = { :git => "https://github.com/TyhGB/EUCBaseUI.git", :tag => "{s.version}" }
+  s.source       = { :git => "https://github.com/TyhGB/EUCBaseUI.git", :tag => s.version }
   s.resource  = "EUCBaseUI.bundke"
   # s.resources = "Resources/*.png"
 #s.frameworks = "EUCBaseUI.framework", "EUCSDK.framework"
