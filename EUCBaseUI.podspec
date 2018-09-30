@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/TyhGB/EUCBaseUI.git", :tag => s.version }
-  s.resource  = "EUCBaseUI.bundle"
-  # s.resources = "Resources/*.png"
+#s.resource  = "EUCBaseUI.bundle"
+   s.resources = "EUCBaseUI.bundle"
 #s.frameworks = "EUCBaseUI.framework", "EUCSDK.framework"
 s.vendored_frameworks = 'EUCSDK.framework', 'EUCBaseUI.framework'
   s.requires_arc = true
