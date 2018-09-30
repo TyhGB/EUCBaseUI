@@ -28,11 +28,40 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/TyhGB/EUCBaseUI.git", :tag => s.version }
-#s.resource  = "EUCBaseUI.bundle"
    s.resources = "EUCBaseUIBundle.bundle"
 #s.frameworks = "EUCBaseUI.framework", "EUCSDK.framework"
 s.vendored_frameworks = 'EUCSDK.framework', 'EUCBaseUI.framework'
   s.requires_arc = true
+s.prefix_header_contents =<<-EOS
+
+#ifdef __OBJC__
+#import <UIkit/UIkit.h>
+#import "Public.h"
+#import "UIView+EUC.h"
+#import "UIView+OKAQuick.h"
+#import "NSString+EUC.h"
+#import "EUCGroupNameUtil.h"
+#import "NSArray+EUCDemo.h"
+#import "UIBarButtonItem+EUC.h"
+#import "EUCBaseButton.h"
+#import "MJExtension.h"
+#import "UIView+MJExtension.h"
+#import <EUCSDK/EUCGlobalConsts.h>
+#import <EUCSDK/EUCDialogSingleton.h>
+#import <EUCSDK/EUCIMClient.h>
+#import <EUCSDK/EUCContactManager.h>
+#import <EUCSDK/EUCStyleDefine.h>
+#import <EUCSDK/EUCCacheModel.h>
+#import <EUCSDK/EUCCacheGlobal.h>
+#import <EUCSDK/EUCDataBaseSingleton.h>
+#import <EUCSDK/EUCIMClient.h>
+#endif /* __OBJC__*/
+
+
+
+EOS
+
+#s.xcconfig = { "FRAMEWORK_SEARCH_PATHS" => "$(HOME)/Library/SDKs/ArcGIS/iOS/" }
 s.dependency "WebRTC", "~> 58.17.16937"
 s.dependency "AFNetworking"
 s.dependency "MJExtension"
