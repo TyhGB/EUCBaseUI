@@ -30,8 +30,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/TyhGB/EUCBaseUI.git", :tag => "{s.version}" }
   s.resource  = "EUCBaseUI.bundke"
   # s.resources = "Resources/*.png"
-  s.frameworks = "EUCBaseUI.framework", "EUCSDK.framework"
-
+#s.frameworks = "EUCBaseUI.framework", "EUCSDK.framework"
+s.vendored_frameworks = 'EUCSDK.framework', 'EUCBaseUI.framework'
   s.requires_arc = true
 s.dependency "WebRTC", "~> 58.17.16937"
 s.dependency "AFNetworking"
