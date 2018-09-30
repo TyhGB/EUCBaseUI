@@ -1,0 +1,11 @@
+framework module EUCBaseUI {
+  umbrella header "EUCBaseUI.h"
+
+  export *
+  module * { export * }
+}
+
+module EUCBaseUI.Swift {
+    header "EUCBaseUI-Swift.h"
+    requires objc
+}
